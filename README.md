@@ -9,7 +9,7 @@ A Spring Boot application demonstrating message queuing using RabbitMQ and AMQP 
 - **Docker Support**: RabbitMQ setup with Docker Compose
 - **Configuration Management**: Externalized configuration for queue settings
 - **Retry Mechanism**: Built-in retry logic for failed message processing
-- **Dead Letter Queue**: Support for DLQ pattern (configured but not implemented)
+- **Dead Letter Queue**: Support for DLQ pattern
 
 ## Technology Stack
 
