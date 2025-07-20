@@ -106,7 +106,7 @@ You can override RabbitMQ connection settings using environment variables:
 
 ```json
 {
-  "id": "number",
+  "id": "long",
   "content": "string"
 }
 ```
