@@ -4,3 +4,31 @@ server:
 spring:
   application:
     name: amqp-spring-boot
+
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USER:guest}
+    password: ${RABBIT_PASSWORD:guest}
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 3s
+          max-attempts: 1
+          max-interval: 10s
+          multiplier: 2
+
+    queues:
+      - queue: queue_testing
+        queueDlq: queue_testing.dlq
+        exchange: queue_testing_exchange
+        exchangeDlq: queue_testing_exchange.dlq
+        routingKey: queue_testing_routing_key
+
+      #If needed other queues
+      # - queue: queue2
+      #   queueDlq: queue2.dlq
+      #   exchange: queue2_exchange
+      #   exchangeDlq: queue2_exchange.dlq
+      #   routingKey: queue2_routing_key
